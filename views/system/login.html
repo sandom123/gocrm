@@ -13,7 +13,7 @@
                     <img id="profile-img" class="profile-img-card" src="/assets/img/logo.png" />
                     <p id="profile-name" class="profile-name-card" style="font-size: 24px;">百合婚礼CRM</p>
 
-                    <form action="" method="post" id="login-form">
+                    <form action="System/login" method="post" id="login-form">
                         <div id="errtips" class="hide"></div>
                         <div class="input-group">
                             <div class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
@@ -25,6 +25,15 @@
                             <input type="password" class="form-control" id="pd-form-password" placeholder="密码" name="passWord" autocomplete="off" value="" data-rule="密码:required;password" />
                         </div>
 
+                        {{if .IsShowcaptcha}}
+                        <div class="input-group">
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span></div>
+                            <input type="text" name="captcha" class="form-control" placeholder="验证码" value="">
+                            <span class="input-group-addon" style="padding:0;border:none;cursor:pointer;">
+                            {{create_captcha}}
+                            </span>
+                        </div>
+                        {{end }}
                         <div class="form-group">
                             <label class="inline" for="keeplogin">
                                 <input type="checkbox" name="keeplogin" id="keeplogin" value="1" />

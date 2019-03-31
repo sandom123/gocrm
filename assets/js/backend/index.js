@@ -373,6 +373,8 @@ define(['jquery', 'bootstrap', 'backend', 'addtabs', 'adminlte', 'form','table']
                 params = {};
                 params.userName = $.trim($("input[name='userName']").val());
                 params.passWord = $.trim($("input[name='passWord']").val());
+                params.captcha = $.trim($("input[name='captcha']").val());
+                params.captcha_id = $.trim($("input[name='captcha_id']").val());
                 $.ajax({
                     type: 'POST',
                     dataType: 'json',

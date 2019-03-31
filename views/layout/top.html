@@ -1,0 +1,93 @@
+<header id="header" class="main-header">
+    <!-- Logo -->
+    <a href="javascript:;" class="logo">
+        <!-- 迷你模式下Logo的大小为50X50 -->
+        <span class="logo-mini">CRM</span>
+        <!-- 普通模式下Logo -->
+        <span class="logo-lg"><b>CRM</b>Admin</span>
+    </a>
+
+    <!-- 顶部通栏样式 -->
+    <nav class="navbar navbar-static-top">
+
+        <!--第一级菜单-->
+        <div id="firstnav">
+            <!-- 边栏切换按钮-->
+            <a href="javasscript:;" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">切换</span>
+            </a>
+
+            <!--如果不想在顶部显示角标,则给ul加上disable-top-badge类即可-->
+            <ul class="nav nav-tabs nav-addtabs disable-top-badge hidden-xs" role="tablist" style="overflow: hidden;">
+
+            </ul>
+
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+                    <li>
+                        <a href="/" ><i class="fa fa-home" style="font-size:14px;"></i></a>
+                    </li>
+
+                    <li class="dropdown notifications-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="label label-warning"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">Latest news</li>
+                            <li>
+                                <!-- FastAdmin最新更新信息,你可以替换成你自己站点的信息,assets/js/backend/index.js文件 -->
+                                <ul class="menu">
+
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#" target="_blank">View all</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown messages-menu github-commits">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-github"></i>
+                            <span class="label label-info"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">Recent commits</li>
+                            <li>
+                                <ul class="menu">
+
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#" target="_blank">View all</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- 账号信息下拉框 -->
+                    <li class="dropdown user user-menu">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="/assets/img/avatar.png" class="user-image" alt="Admin">
+                            <span class="hidden-xs"><?php echo $account?></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <img src="/assets/img/avatar.png" class="img-circle" alt="">
+                                <p>
+                                    <?php echo $account?>
+                                </p>
+                                <div class="pull-left">
+                                    <a href="/user/profile" class="btn btn-primary addtabsit">设置</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="/system/logout" class="btn btn-danger">退出</a>
+                                </div>
+                            </li>
+                            <!-- Menu Footer-->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+</header>

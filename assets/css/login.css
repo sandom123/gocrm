@@ -46,3 +46,7 @@ a {
 #login-form .input-group {
   margin-bottom:15px;
 }
+.captcha-img{
+  width: 100px;
+  height: 30px;
+}
