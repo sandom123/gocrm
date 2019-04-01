@@ -5,7 +5,6 @@ import (
 	"strings"
 	"gocrm/libary"
 	"fmt"
-	"encoding/json"
 )
 
 /**
@@ -32,7 +31,7 @@ func (this *BaseController)  Prepare(){
 	this.ControllerName = strings.ToLower(this.ControllerName)
 	this.ActionName = strings.ToLower(this.ActionName)
 	this.AuthCookieName = "myAuthCookie"
-	this.backendConfig()
+	this.Data["version"] = this.Version
 
 	this.AllowNoLogin = []string{"login"}
 	this.AllowNoRight = []string{"indexcontroller", "ajaxcontroller"}
@@ -86,29 +85,4 @@ func (this *BaseController) jsonOutput(code int, message interface{},data interf
 	this.Data["json"] = out
 	this.ServeJSON()
 	this.StopRun()
-}
-
-
-func (this *BaseController) backendConfig(){
-	backendConfig := map[string]interface{}{
-		"site":map[string]string{
-			"name" : "百合婚礼CRM",
-			"cdnurl" : "../",
-			"version" : this.Version,
-			"timezone" : "Asia/Shanghai",
-			"languages" : "zh-cn",
-		},
-		"upload" : "",
-		"modulename" : "index",
-		"controllername" : this.ControllerName,
-		"actionname" : this.ActionName,
-		"jsname" : "backend" + this.ControllerName,
-		"moduleurl" : "../",
-		"language" : "zh-cn",
-		"fastadmin" : "",
-		"referer" : "",
-		"version" : this.Version,
-	}
-	backendConfigJ, _ := json.Marshal(backendConfig)
-	this.Data["backend_config"] = string(backendConfigJ)
 }

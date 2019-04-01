@@ -17,7 +17,26 @@
     <script src="/assets/js/respond.min.js"></script>
     <![endif]-->
     <script>
-        var require= JSON.parse({{.backend_config}})
-        console.log(require);
+        var require= {
+            "config":{
+                "site":{
+                    "name" : "百合婚礼CRM",
+                    "cdnurl" : "../",
+                    "version":"{{.version}}",
+                    "timezone":"Asia/Shanghai",
+                    "language":""
+                },
+                "upload" : "",
+                "modulename" : "index",
+                "controllername" : "",
+                "actionname" : "",
+                "jsname": "",
+                "moduleurl" : "../",
+                "language" : "",
+                "fastadmin" : "",
+                "refefe" : ""
+            }
+        }
+
     </script>
 </head>
