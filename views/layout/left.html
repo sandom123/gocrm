@@ -1,0 +1,203 @@
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 425px;"><section class="sidebar" style="height: 425px; overflow: hidden; width: auto;">
+        <!-- Sidebar user panel -->
+        <div class="user-panel hidden-xs">
+            <div class="pull-left image">
+                <a href="/user/profile" class="addtabsit"><img src="/assets/img/avatar.png" class="img-circle"></a>
+            </div>
+            <div class="pull-left info">
+                <p>admin</p>
+                <i class="fa fa-circle text-success"></i> 在线
+                <span class="text-danger">(开发环境)</span>
+            </div>
+        </div>
+
+        <!-- search form -->
+        <form action="" method="get" class="sidebar-form" onsubmit="return false;">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="搜索菜单">
+                <span class="input-group-btn">
+                                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                <div class="menuresult list-group sidebar-form hide" style="width: 210px;">
+                </div>
+            </div>
+        </form>
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <!--如果想始终显示子菜单,则给ul加上show-submenu类即可-->
+        <ul class="sidebar-menu">
+            <!--                        <li class="header">站内导航</li>-->
+            <li class=""><a href="/index/home" addtabs="11180" url="/index/home" py="kzt" pinyin="kongzhitai"><i class="fa fa-dashboard"></i> <span>控制台</span> <span class="pull-right-container"> <small class="label pull-right bg-blue">hot</small></span></a></li>
+
+            <li class="treeview active"><a href="javascript:;" addtabs="22" url="javascript:;" py="qxgl" pinyin="quanxianguanli"><i class="fa fa-industry"></i> <span>线索管理</span>
+                <span class="pull-right-container">
+                                <!--small class="badge pull-right bg-red">new</small>-->
+                                    </span>
+            </a>
+                <ul class="treeview-menu menu-open" treeview="" style="display: block;">
+                    <li class=""><a href="/Clue/clueSearch" addtabs="71" url="/Clue/clueSearch" py="" pinyin=""><i class="fa fa-cogs"></i> <span>线索查询</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                    <li class=""><a href="/Clue/newClue" addtabs="43" url="/Clue/newClue" py="" pinyin=""><i class="fa fa-tasks"></i> <span>新线索</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                    <li class=""><a href="/Clue/myClue" addtabs="23" url="/Clue/myClue" py="" pinyin=""><i class="fa fa-volume-control-phone"></i> <span>我的线索</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                    <li class=""><a href="/Clue/myNotContact" addtabs="73" url="/Clue/myNotContact" py="" pinyin=""><i class="fa fa-cogs"></i> <span>我的未联系线索</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                    <li class=""><a href="/Clue/myClient" addtabs="72" url="/Clue/myClient" py="" pinyin=""><i class="fa fa-cogs"></i> <span>我的意向客户</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                    <li class=""><a href="/Clue/allOrgClue" addtabs="45" url="/Clue/allOrgClue" py="" pinyin=""><i class="fa fa-th-large"></i> <span>组织全部线索</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                    <li class=""><a href="/Clue/allClue" addtabs="42" url="/Clue/allClue" py="" pinyin=""><i class="fa fa-th"></i> <span>全部线索</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                    <li class="active"><a href="/Clue/returnedClue" addtabs="41" url="/Clue/returnedClue" py="" pinyin=""><i class="fa fa-retweet"></i> <span>退回的线索</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                    <li class=""><a href="/Clue/discardedClue" addtabs="44" url="/Clue/discardedClue" py="" pinyin=""><i class="fa fa-trash-o"></i> <span>废弃的线索</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="treeview"><a href="javascript:;" addtabs="77" url="javascript:;" py="qxgl" pinyin="quanxianguanli"><i class="fa fa-bars"></i> <span>订单管理</span>
+                <span class="pull-right-container">
+                                <!--small class="badge pull-right bg-red">new</small>-->
+                                    </span>
+            </a>
+                <ul class="treeview-menu" treeview="">
+                    <li class=""><a href="/Order/list" addtabs="78" url="/Order/list" py="" pinyin=""><i class="fa fa-building"></i> <span>订单列表</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                    <li class=""><a href="/Order/myOrderList" addtabs="83" url="/Order/myOrderList" py="" pinyin=""><i class="fa fa-id-card-o"></i> <span>我的订单</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="treeview"><a href="javascript:;" addtabs="74" url="javascript:;" py="qxgl" pinyin="quanxianguanli"><i class="fa fa-reorder"></i> <span>工单管理</span>
+                <span class="pull-right-container">
+                                <!--small class="badge pull-right bg-red">new</small>-->
+                                    </span>
+            </a>
+                <ul class="treeview-menu" treeview="">
+                    <li class=""><a href="/Workorder/list" addtabs="75" url="/Workorder/list" py="" pinyin=""><i class="fa fa-cogs"></i> <span>工单列表</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="treeview"><a href="javascript:;" addtabs="67" url="javascript:;" py="qxgl" pinyin="quanxianguanli"><i class="fa fa-cogs"></i> <span> 设置</span>
+                <span class="pull-right-container">
+                                <!--small class="badge pull-right bg-red">new</small>-->
+                                    </span>
+            </a>
+                <ul class="treeview-menu" treeview="">
+                    <li class=""><a href="/User/profile" addtabs="50" url="/User/profile" py="" pinyin=""><i class="fa fa-cogs"></i> <span>修改个人资料</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="treeview"><a href="javascript:;" addtabs="35" url="javascript:;" py="qxgl" pinyin="quanxianguanli"><i class="fa fa-phone"></i> <span>值班坐席管理</span>
+                <span class="pull-right-container">
+                                <!--small class="badge pull-right bg-red">new</small>-->
+                                    </span>
+            </a>
+                <ul class="treeview-menu" treeview="">
+                    <li class=""><a href="/Ondutyseats/list" addtabs="36" url="/Ondutyseats/list" py="" pinyin=""><i class="fa fa-headphones"></i> <span>值班坐席列表</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="treeview"><a href="javascript:;" addtabs="39" url="javascript:;" py="qxgl" pinyin="quanxianguanli"><i class="fa fa-cogs"></i> <span>线索跟进状态管理</span>
+                <span class="pull-right-container">
+                                <!--small class="badge pull-right bg-red">new</small>-->
+                                    </span>
+            </a>
+                <ul class="treeview-menu" treeview="">
+                    <li class=""><a href="/Flowstate/list" addtabs="33" url="/Flowstate/list" py="" pinyin=""><i class="fa fa-spotify"></i> <span>跟进状态列表</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="treeview"><a href="javascript:;" addtabs="40" url="javascript:;" py="qxgl" pinyin="quanxianguanli"><i class="fa fa-cogs"></i> <span>线索来源管理</span>
+                <span class="pull-right-container">
+                                <!--small class="badge pull-right bg-red">new</small>-->
+                                    </span>
+            </a>
+                <ul class="treeview-menu" treeview="">
+                    <li class=""><a href="/Waysource/list" addtabs="34" url="/Waysource/list" py="" pinyin=""><i class="fa fa-bars"></i> <span>线索来源列表</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="treeview"><a href="javascript:;" addtabs="1" url="javascript:;" py="qxgl" pinyin="quanxianguanli"><i class="fa fa-align-right"></i> <span>用户和权限</span>
+                <span class="pull-right-container">
+                                <!--small class="badge pull-right bg-red">new</small>-->
+                                    </span>
+            </a>
+                <ul class="treeview-menu" treeview="">
+                    <li class=""><a href="/User/list" addtabs="13" url="/User/list" py="" pinyin=""><i class="fa fa-user-circle"></i> <span>用户管理</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                    <li class=""><a href="/User/role" addtabs="10" url="/User/role" py="" pinyin=""><i class="fa fa-address-card-o"></i> <span>角色管理</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                    <li class=""><a href="/System/organization" addtabs="7" url="/System/organization" py="" pinyin=""><i class="fa fa-bars"></i> <span>组织管理</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                    <li class=""><a href="/System/menu" addtabs="2" url="/System/menu" py="" pinyin=""><i class="fa fa-list"></i> <span>菜单管理</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="treeview"><a href="javascript:;" addtabs="16" url="javascript:;" py="qxgl" pinyin="quanxianguanli"><i class="fa fa-cogs"></i> <span>日志管理</span>
+                <span class="pull-right-container">
+                                <!--small class="badge pull-right bg-red">new</small>-->
+                                    </span>
+            </a>
+                <ul class="treeview-menu" treeview="">
+                    <li class=""><a href="/Logger/loginlog" addtabs="17" url="/Logger/loginlog" py="" pinyin=""><i class="fa fa-cogs"></i> <span>登录日志列表</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                    <li class=""><a href="/Logger/operationlog" addtabs="18" url="/Logger/operationlog" py="" pinyin=""><i class="fa fa-cogs"></i> <span>操作日志列表</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                    <li class=""><a href="/Logger/smslog" addtabs="76" url="/Logger/smslog" py="" pinyin=""><i class="fa fa-cogs"></i> <span>短信日志</span>
+                        <span class="pull-right-container"> </span></a>
+                    </li>
+
+                </ul>
+            </li>
+
+        </ul>
+    </section><div class="slimScrollBar" style="background: rgba(0, 0, 0, 0.2); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 194.22px;"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+    <!-- /.sidebar -->
+</aside>

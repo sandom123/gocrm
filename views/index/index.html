@@ -1,9 +1,14 @@
-{{template "layout/header.html"}}
-<body class="hold-transition skin-blue sidebar-mini fixed" id="tabs">
+<script type="text/javascript">
+    require.config.modulename="index";
+    require.config.controllername="index";
+    require.config.actionname="index";
+    require.config.jsname="backend/index";
+    require.config.moduleurl="../";
+</script>
 <div class="wrapper">
-    {{template "layout/top.html"}}
+    {{template "layout/top.html" .}}
     <!-- Left side column. contains the logo and sidebar -->
-    {{template "layout/left.html"}}
+    {{template "layout/left.html" .}}
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper tab-content tab-addtabs">
 
@@ -16,7 +21,3 @@
         reserved.
     </footer>
 </div>
-<!-- ./wrapper -->
-<!-- end main content -->
-{{template "layout/footer.html"}}
-

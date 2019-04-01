@@ -11,4 +11,3 @@ func main() {
 	beego.SetStaticPath("/assets", "assets")
 	beego.Run()
 }
-

@@ -36,6 +36,7 @@ func init() {
 	登录
  */
 func (this *SystemController) Login(){
+	this.Layout = "" //登录页无Layout
 	if this.isPost(){
 		username := strings.TrimSpace(this.GetString("userName"))
 		password := strings.TrimSpace(this.GetString("passWord"))

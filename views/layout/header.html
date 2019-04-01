@@ -17,6 +17,7 @@
     <script src="/assets/js/respond.min.js"></script>
     <![endif]-->
     <script>
-        var require={"config":{"site":{"name":"\u767e\u5408\u5a5a\u793cCRM","cdnurl":"..\/","version":"1.1.0","timezone":"Asia\/Shanghai","languages":"zh-cn"},"upload":"","modulename":"index","controllername":"system","actionname":"login","jsname":"backend\/system","moduleurl":"..\/","language":"","fastadmin":"","referer":null}};
+        var require= JSON.parse({{.backend_config}})
+        console.log(require);
     </script>
 </head>
