@@ -21,16 +21,10 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','upload'], function ($
                 url: $.fn.bootstrapTable.defaults.extend.index_url,
                 columns: [
                     [
-                        {field: 'state', checkbox: true, },
-                        {field: 'id', title: 'ID'},
-                        {field: 'account', title: __('account'),operate:"LIKE"},
-                        {field: 'name', title: __('name'),operate:"LIKE"},
-                        //{field: 'groups_text', title: __('Group'), operate:false, formatter: Table.api.formatter.label},
-                        {field: 'email', title: __('Email'),operate:false},
-                        {field: 'org_name', title: '组织',operate:false},
-                        {field: 'role_name', title: '角色',operate:false},
-                        {field: 'status', title: __("Status"), searchList: {"normal": __('Normal'), "close": __('Close')},formatter: Table.api.formatter.status},
-                        {field: 'last_time', title: __('Login time'),operate:false},
+                        {field: 'state', checkbox: true},
+                        {field: 'Id', title: 'ID'},
+                        {field: 'Account', title: __('account'),operate:"LIKE"},
+                        {field: 'Name', title: "用户名",operate:"LIKE"},
                         {field: 'operate', title: __('Operate'), events: Table.api.events.operate, formatter: function (value, row, index) {
                                 if(row.id == 1){
                                     return '';

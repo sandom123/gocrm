@@ -2,6 +2,7 @@ package models
 
 import (
 	"github.com/astaxie/beego/orm"
+	"github.com/graphql-go/graphql"
 )
 
 func init() {
@@ -23,6 +24,16 @@ func (u *User) TableName() string {
 	// db table name
 	return GetTableName("user")
 }
+
+func (u *User) GetUserInfo(id int) User {
+	m := new(User)
+	err := orm.NewOrm().QueryTable(GetTableName("user")).Filter("id", id).One(m)
+	if err != nil{
+		return User{}
+	}
+	return m
+}
+
 //通过用户名获取用户信息
 func UserInfoGetByName(username string) (*User, error) {
 	m := new(User)

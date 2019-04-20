@@ -5,6 +5,8 @@ import (
 	"strings"
 	"gocrm/libary"
 	"fmt"
+	"gocrm/models"
+	"strconv"
 )
 
 /**
@@ -18,6 +20,8 @@ type BaseController struct {
 	AllowNoLogin []string //是否允许未登录用户访问页面，如果允许不登录，则写在这里
 	AllowNoRight []string//是否权限限制，如果不受权限限制，则写在这里
 	Version string //系统版本
+	AdminId int
+	UserInfo models.User
 }
 
 /**
@@ -35,13 +39,9 @@ func (this *BaseController)  Prepare(){
 
 	this.AllowNoLogin = []string{"login"}
 	this.AllowNoRight = []string{"indexcontroller", "ajaxcontroller"}
-	AuthCookie := this.Ctx.GetCookie(this.AuthCookieName)
-	fmt.Println(AuthCookie)
-	//AuthCookie := this.Ctx.GetCookie(this.AuthCookieName)
-	//fmt.Println(AuthCookie)
-	fmt.Println(this.ControllerName, this.ActionName, this.AuthCookieName)
 	if !libary.InSlice(this.ActionName, this.AllowNoLogin){
 		this.checkLogin()
+
 	}
 }
 
@@ -50,11 +50,22 @@ func (this *BaseController)  Prepare(){
  */
 func (this *BaseController) checkLogin(){
 	AuthCookie := this.Ctx.GetCookie(this.AuthCookieName)
-	fmt.Println(AuthCookie)
 	if AuthCookie == ""{
-		//this.Ctx.Redirect(302, "/system/login")
+		this.Ctx.Redirect(302, "/system/login")
 	}
 
+	token := AuthCookie[:32]
+	userIdStr := AuthCookie[32:]
+	uid, err := strconv.Atoi(userIdStr)
+	if err != nil{
+		this.Ctx.Redirect(302, "/system/login")
+	}
+	checkToken := libary.CreateUserPassword(userIdStr)
+	if token != checkToken{
+		this.Ctx.Redirect(302, "/system/login")
+	}
+	this.AdminId = uid
+	//this.UserInfo = models.User.GetUserInfo(uid)
 }
 
 //是否为post请求
@@ -71,13 +82,13 @@ func (this *BaseController) isGet() bool{
 func (this *BaseController) getClientIp() string{
 	s := strings.Split(this.Ctx.Request.RemoteAddr, ":")
 
-	return s[0];
+	return s[0]
 }
 
 /**
  json输出
  */
-func (this *BaseController) jsonOutput(code int, message interface{},data interface{}){
+func (this *BaseController) jsonOutput(code int, message string,data interface{}){
 	out := make(map[string]interface{})
 	out["code"] = code
 	out["msg"] = message

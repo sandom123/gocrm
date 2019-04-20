@@ -17,14 +17,13 @@ func (this *UserController) List() {
 	pageSize,_ := strconv.Atoi(this.GetString("limit"))
 	offset,_ := strconv.Atoi(this.GetString("offset"))
 	where := ""
-	list, count :=models.UserGetPageList(where, pageSize, offset, "-Id")
+	list, count := models.UserGetPageList(where, offset, pageSize, "-Id")
 	data := make(map[string]interface{})
 	data["rows"] = list
 	data["total"] = count
 	if this.IsAjax(){
 		this.Data["json"] = data
 		this.ServeJSON()
-		//this.jsonOutput(1, "", data)
 	}
 	this.TplName = "user/list.html"
 }

@@ -5,7 +5,6 @@ import (
 	"gocrm/models"
 	"gocrm/libary"
 	"strconv"
-	"encoding/json"
 	"github.com/astaxie/beego/utils/captcha"
 	"github.com/astaxie/beego/cache"
 	_"fmt"
@@ -53,7 +52,7 @@ func (this *SystemController) Login(){
 
 		user, err:=models.UserInfoGetByName(username)
 		if err != nil{
-			this.jsonOutput(0, err, "")
+			this.jsonOutput(0, err.Error(), "")
 		}
 		if libary.Md5(password) != user.Password{
 			this.jsonOutput(0, "账号或者密码错误","")
@@ -75,13 +74,7 @@ func (this *SystemController) Login(){
 
 //生成登录cookie
 func (this *SystemController) generateLoginCookie(user models.User)  {
-	cookieData := make(map[string]interface{})
-	cookieData["id"] = user.Id
-	cookieData["account"] = user.Account
-	cookieData["role_id"] = user.Role_id
-	cookieData["org_id"] = user.Org_id
-	cookieData["token"] = libary.CreateUserPassword(strconv.Itoa(user.Id))
-	byteJson, _ :=json.Marshal(cookieData)
-
-	this.Ctx.SetCookie(this.AuthCookieName, string(byteJson), 7 * 86400)
+	authCookie := libary.CreateUserPassword(strconv.Itoa(user.Id))
+	authCookie = authCookie + strconv.Itoa(user.Id);
+	this.Ctx.SetCookie(this.AuthCookieName, authCookie, 7 * 86400, "/")
 }
