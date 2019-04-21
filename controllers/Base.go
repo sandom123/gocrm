@@ -4,7 +4,6 @@ import (
 	"github.com/astaxie/beego"
 	"strings"
 	"gocrm/libary"
-	"fmt"
 	"gocrm/models"
 	"strconv"
 )
@@ -21,7 +20,7 @@ type BaseController struct {
 	AllowNoRight []string//是否权限限制，如果不受权限限制，则写在这里
 	Version string //系统版本
 	AdminId int
-	UserInfo models.User
+	UserInfo *models.User
 }
 
 /**
@@ -65,7 +64,10 @@ func (this *BaseController) checkLogin(){
 		this.Ctx.Redirect(302, "/system/login")
 	}
 	this.AdminId = uid
-	//this.UserInfo = models.User.GetUserInfo(uid)
+	this.UserInfo = models.GetUserInfo(uid)
+	if this.UserInfo == nil{
+		this.Ctx.Redirect(302, "/system/login")
+	}
 }
 
 //是否为post请求

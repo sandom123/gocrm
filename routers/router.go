@@ -21,5 +21,5 @@ func init() {
 	beego.AutoRouter(&controllers.IndexController{})
 	beego.AutoRouter(&controllers.UserController{})
 	beego.AutoRouter(&controllers.ArticleController{})
-	//beego.ErrorController(&controllers.ErrorController{})
+	beego.ErrorController(&controllers.ErrorController{})
 }
