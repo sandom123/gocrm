@@ -1,11 +1,19 @@
 package controllers
 
+import (
+	"fmt"
+	"gocrm/services"
+)
+
 type IndexController struct{
 	BaseController
 }
 
 func (this *IndexController) Index(){
 	this.Data["title"] = "首页"
+	fmt.Println(this.UserInfo.Role_id)
+	services.HookMenus("10")
+	//fmt.Println(menulist)
 	this.TplName = "index/index.html"
 }
 

@@ -6,7 +6,7 @@ import (
 
 func init() {
 	// 需要在init中注册定义的model
-	orm.RegisterModel(new(User))
+	orm.RegisterModel(new(User), new(Role))
 }
 
 type User struct{
@@ -24,6 +24,17 @@ func (u *User) TableName() string {
 	return GetTableName("user")
 }
 
+type Role struct {
+	Id int
+	Pid int
+	Name string
+	Rights string
+	AllowWaySources string
+}
+
+func (r *Role)  TableName() string{
+	return GetTableName("role")
+}
 func GetUserInfo(id int) *User {
 	m := new(User)
 	err := orm.NewOrm().QueryTable(GetTableName("user")).Filter("id", id).One(m)
@@ -32,6 +43,15 @@ func GetUserInfo(id int) *User {
 	}
 	return m
 }
+
+func GetRoleListByWhere( where string) []*Role {
+	list := make([]*Role, 0)
+	query := orm.NewOrm().QueryTable(GetTableName("role"))
+	query.All(&list)
+
+	return list
+}
+
 
 //通过用户名获取用户信息
 func UserInfoGetByName(username string) (*User, error) {
@@ -54,5 +74,11 @@ func UserGetPageList(where string, offset,pageSize int, orderby string) ([]*User
 	query.OrderBy(orderby).Limit(pageSize, offset).All(&list)
 
 	return list, total
+}
+
+func getMenuList(roleIds string){
+	if roleIds == "0"{
+
+	}
 }
 
